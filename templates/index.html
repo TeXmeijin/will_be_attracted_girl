@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Form
+  ================================================== -->
+<div class="sec-main">
+    <div class='mod-form'>
+        <form action="/result" method="post" id="form">
+            {% for idx in counts %}
+            <div class="form">
+                <div class="img">
+                    <img src="/static/img_sample_models/{{ idx }}.jpg" width='300' height='300'>
+                </div>
+                <div class="radioGroup">
+                    <input type="radio" class="radio" name="{{ idx - 10 }}" id="love{{ idx - 10 }}" value="0"{% if idx % 5 == 2 %} checked{% endif %}><label for="love{{ idx - 10 }}">めっちゃ好み</label>
+                    <input type="radio" class="radio" name="{{ idx - 10 }}" id="like{{ idx - 10 }}" value="1"{% if idx % 5 == 3 %} checked{% endif %}><label for="like{{ idx - 10 }}">好み</label>
+                    <input type="radio" class="radio" name="{{ idx - 10 }}" id="normal{{ idx - 10 }}" value="2"{% if idx % 5 == 4 %} checked{% endif %}><label for="normal{{ idx - 10 }}">普通</label>
+                    <input type="radio" class="radio" name="{{ idx - 10 }}" id="unlike{{ idx - 10 }}" value="3"{% if idx % 5 == 0 %} checked{% endif %}><label for="unlike{{ idx - 10 }}">好きではない</label>
+                    <input type="radio" class="radio" name="{{ idx - 10 }}" id="normal{{ idx - 10 }}" value="4"{% if idx % 5 == 1 %} checked{% endif %}><label for="normal{{ idx - 10 }}">苦手</label>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="submitter">Submit</div>
+        </form>
+    </div>
+</div>
+{% endblock %}
