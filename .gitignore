@@ -4,4 +4,5 @@
 .DS_Store
 .hdf5
 __pycache__/
-lerned_model/
+learned_model/
+
