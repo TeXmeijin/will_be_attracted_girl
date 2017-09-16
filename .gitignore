@@ -1,0 +1,7 @@
+*.npy
+*.jpg
+*.pyc
+.DS_Store
+.hdf5
+__pycache__/
+lerned_model/
